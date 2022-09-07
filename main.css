@@ -1,0 +1,479 @@
+/* type /** to auto make comment blocks */
+/** git working? */
+:root   /* variables */
+{
+    --background: #1c1c1c;
+    --primary: #8c38ff;
+    --light: #dfdfdf;
+    --dark: #32ded2;
+    --darker: #104a46;
+    --direction: 'ltr'
+    --writing-mode: 'horizontal-tb';
+}
+
+html
+{
+    -ms-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+    padding: 0 0 0 0;
+}
+
+*, *:before, *:after
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+    font-family: Helvetica, Arial, sans-serif;
+    line-height: 1.6;
+}
+
+body
+{
+    background-color: var(--background);
+    color: #dfdfdf;
+    /**
+     * padding-left: 10em;
+     * padding-top: 10em;
+     * 
+     * for fixed navbar
+     */
+}
+
+.body-content   /** wrapper for body content */    /** https://stackoverflow.com/a/48791906 */
+{
+    padding-left: 5%;
+    padding-top: 3%;
+}
+
+header
+{
+    
+}
+
+h1
+{
+    font-size: 2em;
+    font-weight: 900;
+    letter-spacing: 0.2px;
+    margin: .67em 0
+}
+
+p
+{
+    
+}
+
+a:link
+{
+    color: var(--dark);
+    text-decoration: none;
+}
+
+a:visited
+{
+    color: var(--dark);
+    text-decoration: none;
+}
+
+a:hover
+{
+    color: var(--darker);
+    text-decoration: underline;
+}
+
+a:active
+{
+    color: var(--darker);
+    text-decoration: underline;
+}
+
+nav
+{
+    position: relative; /** relative - stays as you scroll down */
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 99;
+    /**
+     * Z Index ( z-index ) is a CSS property that defines the order of overlapping HTML elements (stack order)
+     * Elements with a higher index will be placed on top of elements with a lower index
+     */
+    display: flex;
+    justify-content: space-between; /* equal spacing between each element */
+    align-items: center;
+    background-color: #000;
+    color: #FFFFFF;
+    padding: 0.2em 1.5em !important; /* 1 rem = 16px */
+    border-bottom: 3px solid var(--dark);
+}
+
+nav h1
+{
+    letter-spacing: 1px;
+    padding: 0.5rem 1rem;
+    padding-right: calc(1rem - 5px); /* for equal spacing */
+    border: 3px solid #313436;
+    border-radius: 16px; /* rounded edges */
+    text-transform: uppercase;
+}
+
+nav h1 a:link
+{
+    /* color: #dfdfdf !important; */
+}
+
+nav h1:hover
+{
+    color: var(--dark);
+    /* border-color: #8c38ff; */
+    background-color: rgba(50, 222, 210, 0.116);
+    border-color: rgba(50, 222, 210, 0.1);
+    text-decoration: none !important;
+}
+
+.menu
+{
+    display: none;
+    align-items: center;
+    margin: 0 -1rem;
+    flex: 1 1 0%;
+    justify-content: flex-end;
+    margin: 0 -16px;
+}
+
+.menu a
+{
+    margin: 0 1rem; /** no on right changes menu spacing */
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+    transition: 0.3s;
+    padding: 8px 16px;
+    border-radius: 99px;
+}
+
+menu a.is-active, .menu a:hover
+{
+    color: var(--dark);
+    background-color: rgb(20, 20, 20);
+}
+
+.hamburger
+{
+    appearance: none;
+    outline: none;
+    border: none;
+    background: none;
+    cursor: pointer;
+
+    display: block;
+    position: relative;
+    z-index: 1;
+
+    user-select: none;
+}
+
+.hamburger span
+{
+    display: block;
+    width: 33px;
+    height: 4px;
+    margin-bottom: 5px;
+    position: relative;
+
+    background-color: var(--light);
+    border-radius: 6px;
+    z-index: 1;
+
+    transform-origin: 0 0;
+
+    transition: 0.4s;
+}
+
+.hamburger:hover span:nth-child(2)
+{
+    transform: translateX(10px);
+    background-color: var(--primary);
+}
+
+.hamburger.is-active span:nth-child(1)
+{
+    transform: translate(0px, -2px) rotate(45deg);
+}
+
+.hamburger.is-active span:nth-child(2)
+{
+    opacity: 0;
+    transform: translateX(15px);
+}
+
+.hamburger.is-active span:nth-child(3)
+{
+    transform: translate(-3px, 3px) rotate(-45deg);
+}
+
+.hamburger.is-active:hover span
+{
+    background-color: var(--primary);
+}
+
+.mobile-menu
+{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 200%;
+    z-index: 98;
+    
+    padding-top: 42%;
+    opacity: 0;
+    transform: translateY(-100%);
+    background-color: #000;
+    color: white;
+    transition: 400ms;
+}
+
+.mobile-menu.is-open
+{
+    opacity: 1;
+    transform: translateY(0);
+    text-align: center !important;
+}
+
+.mobile-menu a
+{
+    display: block;
+    padding: 1rem;
+    color: #FFFFFF;
+    text-align: center;
+    text-decoration: none;
+    font-size: 1.25rem;
+    transform: 0.3s;
+}
+
+.mobile-menu a:hover
+{
+    color: var(--light);
+    background-color: var(--darker);
+}
+
+@media (min-width: 768px)
+{
+    .mobile-menu, .hamburger
+    {
+        display: none;
+    }
+    
+    .menu
+    {
+        display: flex;
+    }
+}
+
+::-webkit-scrollbar
+{
+    width: 20px;
+    display: none;  /* disables scrollbar but still enables scrolling */
+}
+  
+  ::-webkit-scrollbar-track
+{
+    background-color: transparent;
+}
+  
+  ::-webkit-scrollbar-thumb
+{
+    border-radius: 40px;
+    border: 6px solid transparent;
+    background-clip: content-box;
+    background-color: transparent;
+}
+  
+  ::-webkit-scrollbar-thumb:hover
+{
+    background-color: #a8bbbf;
+}
+
+.grid-container /** https://web.dev/learn/css/grid/ */
+{
+    display: grid;
+    direction: var(--direction);
+    writing-mode: var(--writing-mode);
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+    grid-auto-rows: minmax(20em, auto);
+    gap: 15px;
+    background-color: transparent;
+    padding: 1em;
+    border-radius: 10px;
+    max-width: 100em;
+    justify-content: center;
+    text-align: left;
+    max-inline-size: 100em;    /** changes max width of container */
+}
+
+.box
+{
+    display: block;
+    background-color: var(--background);
+    border: 1px solid transparent;
+    word-break: break-word;
+    hyphens: auto;
+    /* border: solid 2px #000; */
+}
+
+.small-text
+{
+    font-size: small;
+    padding-bottom: 5px;
+    text-decoration: underline;
+}
+
+.links
+{
+    font-size: 0.8em !important;
+}
+
+.email
+{
+    text-decoration: underline;
+    color: var(--dark);
+}
+
+.email:hover
+{
+    color: var(--darker);
+}
+
+.multi-line-ellipsis
+{
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 5;
+    -webkit-box-orient: vertical;
+}
+
+.tall
+{
+    grid-row: auto / span 3;
+    grid-column: auto / span 2;
+    /**
+     * auto - the start track
+     * span - the number of tracks it spans for
+     */
+    border: solid 2px var(--dark);
+    box-shadow: 5px 5px 2px 2px var(--darker);
+    margin-left: 3.750em;
+    padding-left: 0.875em;
+}
+
+.tall h1
+{
+    font-size: 1.75em;
+}
+
+.tall ul
+{
+    margin-left: 1em;
+    /* list-style: none; */
+}
+
+.wide
+{
+    grid-column: auto / span 4;
+    box-shadow: 7px 10px 2px 2px var(--darker);
+    border: solid 4px var(--dark);
+    border-radius: 2px;
+    padding-left: 3em;
+    margin-bottom: 30px;
+}
+
+.wide article h1
+{
+    font-size: 2em;
+}
+
+@media (max-width: 768px)
+{
+    .grid-container
+    {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .wide
+    {
+        grid-column: auto / span 2;
+    }
+}
+
+article
+{
+    font-size: 1em;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-bottom: 3px;
+}
+
+article h1
+{
+    font-size: 1.3em;
+    text-decoration: underline;
+    text-decoration-color: var(--dark);
+}
+
+.main-card-title    /** add this to the first wide box for the underline to go under the header completely */
+{
+    text-underline-offset: 10px;
+}
+
+article h1 a
+{
+    text-decoration-color: var(--dark) !important;
+}
+
+article h1 a:link
+{
+    text-decoration-color: var(--dark);
+    color: white;
+}
+
+article h1 a:visited
+{
+    text-decoration-color: var(--dark);
+    color: white;
+}
+
+article h1 a:hover
+{
+    text-decoration-color: var(--dark);
+    color: var(--dark) !important;
+}
+
+article h1 a:active
+{
+    text-decoration-color: var(--dark);
+}
+
+article p
+{
+    font-size: 1em !important;
+}
+
+article p:first-child::first-letter
+{
+    color: hotpink;
+    padding: 0 .3rem;
+    margin: 0 .3rem 0 0;
+    border: 2px solid;
+    border-radius: 8px;
+    font-size: 4rem;
+    line-height: 1;
+}
+
+.center
+{
+    text-align: center !important;
+}
