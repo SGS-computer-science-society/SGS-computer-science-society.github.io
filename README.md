@@ -11,9 +11,9 @@
   b. use the command "ls" to list the files and folders in the directory you are currently in
 4. use the command below to download the repo to your computer
 
-'''
+```
 git clone https://github.com/SGS-computer-science-society/SGS-computer-science-society.github.io
-'''
+```
 
 5. now all the files are on your computer! Use any IDE/text editor you like to make changes. A good starting IDE is [VSCODE](https://code.visualstudio.com/download)
 6. When the repo is updated, remember to use the command "git pull" in your directory to pull the updates from the remote github repository.
