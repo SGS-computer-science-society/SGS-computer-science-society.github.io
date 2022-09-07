@@ -10,6 +10,7 @@
   a. use the command "cd" to change directory
   b. use the command "ls" to list the files and folders in the directory you are currently in
 4. use the command below to download the repo to your computer
+
 '''
 git clone https://github.com/SGS-computer-science-society/SGS-computer-science-society.github.io
 '''
