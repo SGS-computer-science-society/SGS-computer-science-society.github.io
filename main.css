@@ -3,10 +3,12 @@
 /** hey */
 :root   /* variables */
 {
-    --background: #1c1c1c;
+    /* --background: #1c1c1c; */
+    --background: #151718;
     --primary: #8c38ff;
     --light: #dfdfdf;
-    --dark: #32ded2;
+    /* --dark: #32ded2; */
+    --dark: #23cabf;
     --darker: #104a46;
     --direction: 'ltr'
     --writing-mode: 'horizontal-tb';
@@ -44,8 +46,9 @@ body
 
 .body-content   /** wrapper for body content */    /** https://stackoverflow.com/a/48791906 */
 {
-    padding-left: 5%;
+    padding-left: 10%;
     padding-top: 3%;
+    padding-right: 10%;
 }
 
 header
@@ -66,6 +69,22 @@ p
     
 }
 
+code
+{
+    font-size: 1.5em !important;
+    background-color: #232729;
+}
+
+.quote
+{
+    
+}
+
+li
+{
+    list-style-position: inside;
+}
+
 a:link
 {
     color: var(--dark);
@@ -80,7 +99,7 @@ a:visited
 
 a:hover
 {
-    color: var(--darker);
+    /* color: var(--darker); */
     text-decoration: underline;
 }
 
@@ -110,6 +129,11 @@ nav
     border-bottom: 3px solid var(--dark);
 }
 
+nav:hover
+{
+    color: #FFFFFF !important;
+}
+
 nav h1
 {
     letter-spacing: 1px;
@@ -120,16 +144,10 @@ nav h1
     text-transform: uppercase;
 }
 
-nav h1 a:link
-{
-    /* color: #dfdfdf !important; */
-}
-
 nav h1:hover
 {
-    color: var(--dark);
     /* border-color: #8c38ff; */
-    background-color: rgba(50, 222, 210, 0.116);
+    background-color: rgba(0, 204, 255, 0.158);
     border-color: rgba(50, 222, 210, 0.1);
     text-decoration: none !important;
 }
@@ -474,7 +492,7 @@ article p:first-child::first-letter
     line-height: 1;
 }
 
-.center
+footer
 {
-    text-align: center !important;
+    place-content: center !important;
 }

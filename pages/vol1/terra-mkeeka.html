@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>SGS CSSOC</title>
+        <meta name="description" content="">
+        <link rel="stylesheet" href="../../main.css">
+        <link rel="stylesheet" href="../../normalize.css">
+    </head>
+
+    <body>
+    
+        <header>
+            <nav>
+                <h1><a href="../../index.html" style="text-decoration: none">SGS CSSOC</a></h1>   <!--could make this a css modal    https://markodenic.com/css-tips/-->
+
+                <div class="menu">
+                    <a href="../../index.html">Home</a>
+                    <a href="../articles.html">Other Articles</a>
+                    <a href="../about.html">About</a>
+                    <a href="../contact.html">Contact</a>
+                </div>
+    
+                <button class = "hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </nav>
+    
+            <div class = "mobile-menu">
+                <a href="../../index.html">Home</a>
+                <a href="../articles.html">Other Articles</a>
+                <a href="../about.html">About</a>
+                <a href="../contact.html">Contact</a>
+            </div>
+        </header>
+        
+        <div class="body-content">
+
+            <h1>Turning > $50 billion to < $2 billion with the help of Terraform Labs</h1>
+            <div class="small-text">With Mohammed Keeka, 13D</div>
+
+            <br>
+            <p>
+                Note: For simplicity I will simply be referring to TerraUSD (ticker UST) as Terra and Terra (ticker LUNA) as Luna, the other stablecoins made by Terraform Labs are irrelevant to the story with the exception of TerraSDR which is briefly mentioned later on.
+            </p>
+            <br>
+            
+            <p>
+                Crypto traders have a habit of not trusting centralised entities when it comes to finance. I call it “Satoshi-esque” thinking. In 2009, Satoshi Nakomoto managed to create something brand new, a digital currency with no central entity. Up until now, people were simply using bank transfers or PayPal, which involved some form of central issuer, who could theoretically take your money and escape without a trace. This worked well enough, but replacing this issuer with something that didn’t require you trusting them - e.g. mathematics - was an improvement for sure.
+            </p>
+            <br>
+
+            <p>
+                So when trading crypto for cash you now have an odd problem, because digital, trustless dollars don’t exist. The solution found was to create tokens that are meant to be exchangeable 1:1 with the dollar, but now you have the problem of keeping them pegged to the dollar so they remain usable as equivalents to dollars. There are two ways you can go about this. The first is to back them by physical dollars. For every token the issuer mints, they lock a dollar in a vault somewhere. You may have seen the issue in the last sentence: we now have a central entity, who could theoretically take your money again. So we move onto the second method, pegging them using an algorithm that relies on crypto traders swapping between coins and the miners who create blocks to stabilise the price.
+            </p>
+            <br>
+
+            <p>
+                Terraform Labs created a series of algorithmic stablecoins and a surrounding ecosystem that tried to solve the “digital, trustless dollar” problem with the second method. They did this by running the “Terra Blockchain”, on which these tokens exist. This is similar to Ethereum and Bitcoin where you place transactions into blocks which are then strung together sequentially to validate that there is no error. Currently Bitcoin and Ethereum use a system known as “proof-of-work”, which is what you hear about whenever someone mentions the environmental impact of cryptocurrencies as you require a large amount of processing power to mine blocks. The Terra Blockchain uses a different protocol known as “proof-of-stake”, where miners need to stake a native cryptocurrency Luna to mine Terra transactions. To quote the Terra whitepaper on the issue: 
+            </p>
+
+            <br>
+
+            <center>
+            <code class="quote">
+                “Similar to how a Bitcoin miner’s hash power represents a pro-rata odds of generating Bitcoin blocks, the Luna stake represents pro-rata odds of generating Terra blocks.”
+            </code>
+            </center>
+            
+            <br>
+
+            <p>
+                When it is detected that the price of Terra has drifted below the dollar, the system mints more Luna which is sold to miners in exchange for Terra. The Terra received is burned, lessening the supply and increasing the price. To compensate for the fact it is the miners who take the hit when Terra de-pegs, they are later given increased mining rewards proportional to the excess Luna minted.
+            </p>
+            <br>
+
+            <p>
+                The system also acts as the second party for anyone attempting to swap Terra and Luna:
+                <ul>
+                    <li>
+                        When TerraSDR’s price < 1 SDR, arbitragers can send 1 TerraSDR to the system and receive 1 SDR’s worth of Luna.
+                    </li>
+                    <li>
+                        When TerraSDR’s price > 1 SDR, arbitragers can send 1 SDR’s worth of Luna to the system and receive 1 TerraSDR.
+                    </li>
+                </ul>
+            </p>
+            <br>
+
+            <p>
+                So the swapper gains risk-free profit from the swap (compared to a swap on the open market and in terms of SDR) and the system gains Terra/Luna (whichever is needed) that can now be burned to force back equilibrium.
+            </p>
+            <br>
+
+            <p>
+                Theoretically the system is near perfect with just one Achilles Heel, the death spiral. The death spiral has been the demise of most of the algorithmic stablecoins of the past and during the recent cryptocurrency market crash, it claimed the Terra ecosystem. It occurs when the price falls heavily in both tokens. This typically doesn’t happen in crypto, where both a token representing the dollar and a token representing the perceived wealth of blockchain both trade lower than expected, but the coinciding stock market slump forced many traders to exit all positions to pay for necessities, resulting in this phenomenon.
+            </p>
+            <br>
+
+            <p>
+                As the price of Terra drifted below peg, the system minted more Luna. This only served to devalue Luna (which was already dropping in price from the market crash). The price of Terra didn’t recover from the crash, as traders still weren’t willing to pay $1 for any stablecoin due to the reasoning in the above paragraph. Hence more Luna continued being minted and the price of Luna started to plummet. This spooked investors into losing faith in the system. Suddenly they wanted to move wealth to other coins that were more stable. To quickly sell both Terra and Luna, traders continued to undercut the market price of both, which caused the system to continue minting Luna until the price of both tokens went into freefall.
+            </p>
+            <br>
+
+            <p>
+                This caused the death of the ecosystem. The Terra blockchain is currently halted and the market cap of Luna (total value of all LUNA) has dropped from $41.05 billion to $0.80 billion between the 4th of April and the 21st of May. In the same timeframe, the market cap of Terra dropped from $16.63 billion to $0.64 billion. This statistic doesn’t accurately represent the true damage to traders as it doesn’t account for the inflation of Luna. One million Luna would have been worth $114 million on the 4th of April, while on the 21st of May it would have been worth $103.90 (there is no typo, it is worth less than a millionth of what it was).
+            </p>
+            <br>
+
+            <p>
+                Ultimately, the system was fundamentally flawed as it tanks the price Luna if it is unable to keep Terra at peg, but Luna represents the mining power in the Terra network and so a drop in the price of Luna represents a drop in the overall perceived value of the network, which causes a loss of faith from investors in the entire ecosystem, leading to a death spiral forming.
+            </p>
+            <br>
+
+            <p>
+                If you search for “Terra”, “Luna”, or “Do Kwon” (CEO of Terraform Labs) in Google, you’ll see the fallout of the crash hasn’t quite settled, with much of the blame resting on the Do Kwon. Personally, I believe that the network was always doomed to eventually fail and would have failed earlier if not for the excessive greed and dismissal of criticism as “FUD” (fear, uncertainty and doubt) by the “#LUNAtic” community (yes, they legitimately called themselves lunatics). I do sympathise with those who lost money but I firmly believe that when it comes to crypto, you shouldn’t invest more than you can afford to lose.
+            </p>
+            <br>
+
+            <p>
+                <div class="small-text">On that note, none of this is to be taken as financial advice and I’ll see you in the next edition of CSSOC.</div>
+            </p>
+            <br>
+
+        </div>
+
+        <footer>
+            
+        </footer>
+
+        <script src="main.js"></script>
+    </body>
+</html>
