@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>SGS CSSOC</title>
+        <meta name="description" content="">
+        <link rel="stylesheet" href="../../main.css">
+        <link rel="stylesheet" href="../../normalize.css">
+    </head>
+
+    <body>
+    
+        <header>
+            <nav>
+                <h1><a href="../../index.html" style="text-decoration: none">SGS CSSOC</a></h1>   <!--could make this a css modal    https://markodenic.com/css-tips/-->
+
+                <div class="menu">
+                    <a href="../../index.html">Home</a>
+                    <a href="../articles.html">Other Articles</a>
+                    <a href="../about.html">About</a>
+                    <a href="../contact.html">Contact</a>
+                </div>
+    
+                <button class = "hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </nav>
+    
+            <div class = "mobile-menu">
+                <a href="../../index.html">Home</a>
+                <a href="../articles.html">Other Articles</a>
+                <a href="../about.html">About</a>
+                <a href="../contact.html">Contact</a>
+            </div>
+        </header>
+        
+        <div class="body-content">
+            <div class="small-text">Antony Salta, 13D</div>
+
+            <div class="imgbox">
+                <img class="center-fit" src="https://assets.nintendo.com/image/upload/c_fill,w_1200/q_auto:best/f_auto/dpr_2.0/ncom/en_US/games/switch/o/outer-wilds-switch/hero" alt = "Outer Wilds Banner">
+            </div>
+            
+            <p>
+                Outer Wilds is a game that started off as a collection of a few physics demos that the Creative director, Alex Beachum, had made as university projects. The game is an open world mystery about a solar system trapped in a time loop, and this is a look at the unique ways it’s been designed.
+            </p>
+            <br>
+            
+            <p>
+                Often, games will simplify the physics in action to reduce the processing cost, because it takes a lot more processing power to make calculations on how an object should move when acting under multiple forces, rather than just telling it to move in a scripted way. A rather obvious example of this is the Sun just being a textured circle moving across the skybox in most games, because there’s no need for it to be more accurately modelled. It would be weird if the next Assassin’s Creed game suddenly made an accurate simulation of the universe for no other reason than the sky on Earth looking a little more realistic (Parthiv will tell you why that’s impossible if you ask him). Instead, games will often just make objects move a predetermined amount at a scripted speed and play an animation if needed.
+            </p>
+            <br>
+
+            <p>
+                In comparison, Outer Wilds tries to act as a realistic simulation of a solar system affected by Newtonian physics, performance be damned. You can see this near the beginning of the game, in the museum. There's an exhibit which states that 3 balls are rolling around because of the moon's gravity affecting it, which is true. In fact, if you jump while the moon is overhead, you'll drift to the side, and jump a little higher than normal. Also, the planets’ orbits are actually being simulated as a result of forces, rather than going on set tracks. This is never really noticeable, unless you go far enough away from the solar system to make the orbits majorly affected by floating point errors. In that case, the orbits break so much that the asteroid crashes into a planet, while the system map has a seizure. Not a great case for my claims of realism, but everything has its limits, and it proves it isn’t railroaded.
+            </p>
+            <br>
+
+            <p>
+                This accuracy is more impactful on gameplay when flying, either in your suit or ship. A common mistake when flying to a planet for the first few times (that I certainly never made) is accelerating for more than half your journey, and realising too late that you can only decelerate as fast as you accelerated. In the best case scenario, you can dodge the planet just in time, and spend a while accelerating in the opposite direction. In the worst case, you just slam into the planet and die in spectacular fashion. This accuracy in simulating physics also means that orbital mechanics apply pretty well, and using the fact that you need to go faster in a lower orbit and vice versa is pretty useful for getting one of the game’s achievements. However, Newton’s third law also applies, the most interesting case of this being that you can use your scout launcher to help you fly, as it can work as an impromptu extra thruster. By shooting it off in one direction, you accelerate in the other direction. It’s only really helpful for speedruns and desperately trying to get back into the Hourglass Twins’ orbits, but it’s still neat.
+            </p>
+            <br>
+
+            <p>
+                This level of detail can also be seen in the zero gravity cave in Timber Hearth, with the reason for the lack of gravity being that it’s at the centre of the planet, so no resultant force. Simulating rather than scripting events can also be seen on Brittle Hollow, which was one of the uni demos made a while before the game. It would have been far easier to have the planet’s volcanic moon orbit a set path and hit pre-arranged sections of the planet at fixed times, and sections fall away a predetermined time after the loop starts. Instead, the planet’s volcanic moon procedurally shoots out meteorites at the planet, which will deal damage within a range of values. Sections of the crust fall away because they’ve taken enough damage from the meteorites from the planet’s volcanic moon, rather than it being scripted. This means that it breaks apart differently each loop, and gives a randomness to how much time you have to explore certain areas on the planet.
+            </p>
+            <br>
+
+            <p>
+                The faithfulness of the physics system helps to make the gameplay experience more intuitive and consistent than other games. I’m looking at you Prey, making me keep the thrusters on to stay at the same speed - in space. The intuitiveness helps in learning and mastering the mechanics around the system, since they’re mostly normal physics. After playing around with them, you get a good idea of how it works. This then helps when you apply physics in slightly more complex or less intuitive ways, like changing your orbit and probe jumping, as previously stated. It also helps to learn and see how artificial gravity is created by centrifugal force and what the coriolis effect does to objects thrown across a centrifuge. The process of understanding the physics system also ties in with the main gameplay loop of discovery and experimentation, as you take what you’ve learnt and test out ideas to get a better idea of how it all works and comes together.
+            </p>
+            <br>
+
+            <p>
+                As an interesting aside, in the game engine, the player doesn’t actually move at all. This is because it’s better to keep the camera near the zero coordinates of the world to avoid floating point errors. Since everything has forces acting on it anyway, it makes no difference to performance to apply an opposite force on everything else instead of applying that force to the player. 
+            </p>
+            <br>
+
+            <p>
+                Moving on, the world is designed mindful of the fact that you are in a time loop, and utilises it to great effect. Brittle Hollow and the Hourglass Twins hinge on this especially, as they are both areas that dramatically change as time passes. On Brittle Hollow, certain parts are inaccessible until enough of the planet has fallen away and removed an obstruction. On the Hourglass Twins, the shifting sands cause previously hidden structures to be revealed on the Ash Twin, and caverns you can explore on the Ember Twin  are drowned in sand, putting you on an even tighter timer.
+            </p>
+            <br>
+
+            <p>
+                The game also does well to make sure that you don’t waste too much time doing the same thing. Shortcuts are designed in the world that you can take, as long as you know about them. This is crucial since you’re in a time loop, and all you can take from one loop to another is your knowledge. The first and most obvious instance of these shortcuts is the elevator requiring the launch codes being right next to where you wake up. Without knowing the launch codes, you have to go through the village, and are exposed to characters that give you an intro into the world. However, once you do know the codes, you can take an elevator up to your ship at the beginning of the loop, getting out into space immediately. This is repeated throughout the game, with areas that take a long time to get to through the obvious route having shortcuts once you know where to look, or using knowledge that you gained in that area to be able to get there again more easily. This applies all the way to finishing the game. Because you only have one loop before your physical process is reset, you’re able to beat the game in under 20 minutes. That is, if you know how. There are also other abilities that you have, to help you avoid wasting your time. You can meditate until the end of the loop if you think that you can’t get much done in the remaining time of your loop. You can also sleep at campfires, which causes time to pass faster, and you can wake up at any point. This is useful if you’re waiting for a specific event, like a structure being uncovered on the Ash Twin. The other astronauts’ camps also serve as minor checkpoints, places to refuel, and sleep at their campfires if need be.
+            </p>
+            <br>
+
+            <p>
+                <img class="img-right" src="https://qph.cf2.quoracdn.net/main-qimg-d6e0c20a8babc7b5763aefa81081a531.webp"/>
+                On the other hand, there is also a lot of simplification and bending of physics in other parts of the game, likely to make it less tedious and time consuming, as well as allow for certain things to fit in better narratively. The main case of this being the solar system being majorly shrunk down to a scale of a few dozen kilometres. This reduces the time to travel and makes the planets more densely packed, so more rewarding to explore. It also means that you can see the curvature of the planets, and an orbit is properly conveyed as moving sideways faster than you’re falling. However, the planets are far larger than they should be, given the size of the planet’s orbits. To allow this to happen while keeping the planet’s in a stable enough orbit - at least for the duration of the loop - the strength of gravity from the planets is modelled as falling off linearly, rather than according the the inverse square law, which is close to exponential decrease. What this means is that the force of gravity is weaker than it should be at close ranges,  considering the mass of the planets, but falls to 0 at higher distances, when there should still be some force. It means that you can’t  orbit around planets so easily, but they don’t pull each other dramatically out of orbit. Interestingly enough, the Sun still has accurately modelled gravity, since it’s size hasn’t been changed too much from what it should be.
+            </p>
+            <br>
+
+            <p>
+                Ta da! A look at Outer Wilds, a university tech demo turned into a neat little game
+            </p>
+            <br>
+
+        </div>
+        
+        <script src="main.js"></script>
+    </body>
+</html>
